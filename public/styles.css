@@ -1,0 +1,123 @@
+/* navbar */
+.uk-navbar-container:not(.uk-navbar-transparent){
+    background: rgb(0, 157, 255);
+}
+
+.uk-navbar-nav>li>a{
+    color: white;
+}
+
+.scrape-btn{
+    margin-top: 18px;
+    margin-left: 15px;
+    border-radius: 6px;
+    background: rgb(0, 157, 255);
+    color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.scrape-btn:hover{
+    background-color: white;
+}
+
+/* jumbotron */
+.container{
+    position: relative;
+}
+
+.center{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.h1{
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    font-weight: 750;
+}
+
+.paperpic{
+    width: 100%;
+    height: 600px;
+    filter: blur(.5px) brightness(75%);
+    z-index: -1;
+}
+
+/* articles */
+.uk-container{
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.article{
+    margin-top: 36px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 6px;
+}
+
+.headline{
+    background: rgb(0, 157, 255);
+    color: white;
+    padding: 21px 0px 21px 18px;
+    font-size: 27px;
+}
+
+.details{
+    padding: 0px 21px 21px 21px;
+}
+
+.save-btn, .remove-btn{
+    margin-top: 18px;   
+    margin-right: 12px; 
+}
+
+.saved-modal-btns{
+    margin-top: 45px;
+}
+
+#modal-viewSaved:hover{
+    text-decoration: none;
+}
+
+.notes-btn{
+    margin-top: 18px;
+}
+
+/* notes modal */
+.modal-title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.note-title{
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 21px;
+}
+
+.saved-notes{
+    border: 1px solid #eee;
+    border-radius: 3px;
+    text-align: center;
+    margin-bottom: 21px;
+}
+
+.no-notes{
+    margin-top: 21px;
+    color: #ccc;
+}
+
+.notes{
+    margin-top: 21px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    background-color: rgba(238, 238, 238, 0.911);
+}
+
+.new-note{
+    height: 120px;
+}

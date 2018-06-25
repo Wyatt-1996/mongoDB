@@ -1,0 +1,52 @@
+<div class="container">
+    <img class="paperpic" src="images/paper.jpeg" alt="newspaper">
+    <div class="center h1">Saved Articles
+        <br> {{!--
+        <i>The New York Times</i> --}}
+    </div>
+</div>
+
+
+<div class="uk-container">
+    {{#if article}} {{#each article}}
+    <div class="article">
+        <h3 class="headline">{{title}}</h3>
+        <div class="details">
+            <p class="summary">{{summary}}</p>
+            <a class="link" href="{{link}}">{{link}}</a>
+            <br>
+            <button class="remove-btn uk-button uk-button-danger" type="button" info="{{_id}}">Remove From Saved</button>
+            <button class="notes-btn uk-button uk-button-default" type="button" info="{{title}}" uk-toggle="target: #notes-modal">Article Notes</button>
+        </div>
+    </div>
+    {{/each}} {{else}}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>You have no saved articles.</h4>
+        </div>
+    </div>
+    {{/if}}
+</div>
+
+<!-- Notes modal -->
+<div id="notes-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title modal-title">Article Notes For:</h2>
+        <h6 class="uk-modal-title note-title"></h6>
+        <hr>
+        <div class="saved-notes">
+            <p class="no-notes">No notes for this article yet.</p>
+        </div>
+        <form>
+            <textarea class="uk-textarea new-note" placeholder="New Note"></textarea>
+        </form>
+        <p class="uk-text-right">
+            <button class="save-note uk-button uk-button-primary uk-modal-close" type="button">Save</button>
+        </p>
+    </div>
+</div>
+
+<script>
+    $('.scrape-btn').remove();
+</script>

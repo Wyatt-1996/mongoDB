@@ -1,0 +1,59 @@
+<div class="container">
+    <img class="paperpic" src="images/paper.jpeg" alt="newspaper">
+    <div class="center h1">Mongo Scraper
+        <br>
+        <i>The New York Times</i>
+    </div>
+</div>
+
+<div class="uk-container">
+
+    <button class="clear-all uk-button uk-button-danger" type="button">Clear All Articles</button>
+
+    {{#each article}}
+    <div class="article">
+        <h3 class="headline">{{title}}</h3>
+        <div class="details">
+            <p class="summary">{{summary}}</p>
+            <a class="link" href="{{link}}">{{link}}</a>
+            <br>
+            <button class="save-btn uk-button uk-button-primary" type="button" info="{{_id}}" title="{{title}}" uk-toggle="target: #saved-modal">Save Article</button>
+            <button class="notes-btn uk-button uk-button-default" type="button" id="{{_id}}" info="{{title}}" uk-toggle="target: #notes-modal">Article Notes</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<!-- Saved modal -->
+<div id="saved-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title modal-title">Article Saved:</h2>
+        <h6 class="uk-modal-title note-title"></h6>
+        <p class="uk-text-center saved-modal-btns">
+            <a id="modal-viewSaved" href="/saved">
+                <button class="save-note uk-button uk-button-default" type="button">View Saved Articles</button>
+            </a>
+            <button class="save-note uk-button uk-button-primary uk-modal-close" type="button">Ok</button>
+        </p>
+    </div>
+</div>
+
+<!-- Notes modal -->
+<div id="notes-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title modal-title">Article Notes For:</h2>
+        <h6 class="uk-modal-title note-title"></h6>
+        <hr>
+        <div class="saved-notes">
+            <p class="no-notes">No notes for this article yet.</p>
+        </div>
+        <form>
+            <textarea class="uk-textarea new-note" placeholder="New Note"></textarea>
+        </form>
+        <p class="uk-text-right">
+            <button class="save-note uk-button uk-button-primary" type="button">Save</button>
+        </p>
+    </div>
+</div>
